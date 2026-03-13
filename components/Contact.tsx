@@ -130,9 +130,13 @@ const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit" disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-slate-900 text-white font-black py-5 rounded-2xl transition-all shadow-2xl shadow-primary/30 flex justify-center items-center gap-4 active:scale-[0.98] group text-sm uppercase tracking-widest"
+                className={`w-full font-black py-5 rounded-2xl transition-all flex justify-center items-center gap-4 active:scale-[0.98] group text-sm uppercase tracking-widest ${
+                  formData.email
+                    ? 'bg-slate-900 text-white shadow-2xl shadow-slate-900/30 hover:bg-slate-800 cursor-pointer'
+                    : 'bg-primary/50 text-white/60 shadow-none cursor-default'
+                }`}
               >
                 {isSubmitting ? (
                   <Loader2 className="animate-spin" size={24} />
