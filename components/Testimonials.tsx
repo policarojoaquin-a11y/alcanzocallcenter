@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Star, ExternalLink, ImageOff } from 'lucide-react';
 
 const reviewImages = [
-  { id: 1, src: "test1.png", alt: "Reseña positiva de cliente" },
-  { id: 2, src: "test2.png", alt: "Testimonio de satisfacción" },
-  { id: 3, src: "test4.png", alt: "Comentario de cliente" },
-  { id: 4, src: "test5.png", alt: "Valoración de 5 estrellas" }
+  { id: 1, src: "test12.jpg", alt: "Reseña positiva de cliente" },
+  { id: 2, src: "test22.jpg", alt: "Testimonio de satisfacción" },
+  { id: 3, src: "test33.jpg", alt: "Comentario de cliente" },
+  { id: 4, src: "test44.jpg", alt: "Valoración de 5 estrellas" }
 ];
 
 const TestimonialImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
