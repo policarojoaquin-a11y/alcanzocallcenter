@@ -1,5 +1,5 @@
 import React from 'react';
- 
+
 type Client = {
     name: string;
     src: string;
@@ -7,7 +7,7 @@ type Client = {
     /** logos oscuros sobre fondo claro necesitan tratamiento diferente */
     dark?: boolean;
 };
- 
+
 const clients: Client[] = [
     { name: "Mercado Pago", src: "mp.png",          alt: "Logo de Mercado Pago" },
     { name: "Personal",    src: "personal.png",     alt: "Logo de Personal" },
@@ -20,29 +20,29 @@ const clients: Client[] = [
     { name: "SUNRA",      src: "sunra.png",         alt: "Logo de Sunra" },
     { name: "Volta",      src: "voltalogo.png",     alt: "Logo de Volta" },
 ];
- 
+
 const Clients: React.FC = () => {
     return (
         <section className="py-16 bg-white border-y border-slate-100">
             <div className="container mx-auto px-6">
- 
+
                 {/* Título */}
                 <p className="text-center text-[10px] font-semibold tracking-[0.45em] text-slate-500 uppercase mb-12 select-none">
                     Potenciando el valor de empresas líderes
                 </p>
- 
+
                 {/* Grid de logos */}
-                <div className="grid grid-cols-10 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-visible max-w-6xl mx-auto shadow-sm mt-10">
+                <div className="grid grid-cols-5 md:grid-cols-10 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-visible max-w-6xl mx-auto shadow-sm mt-10">
                     {clients.map((client, index) => (
                         <LogoCell key={index} client={client} />
                     ))}
                 </div>
- 
+
             </div>
         </section>
     );
 };
- 
+
 /* ── Celda individual ── */
 const LogoCell: React.FC<{ client: Client }> = ({ client }) => (
     <div
@@ -71,7 +71,7 @@ const LogoCell: React.FC<{ client: Client }> = ({ client }) => (
                 group-hover:opacity-100
             "
         />
- 
+
         {/* Tooltip con el nombre */}
         <span
             className="
@@ -88,5 +88,5 @@ const LogoCell: React.FC<{ client: Client }> = ({ client }) => (
         </span>
     </div>
 );
- 
+
 export default Clients;
