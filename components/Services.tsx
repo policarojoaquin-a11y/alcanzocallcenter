@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headset, ShoppingCart, DollarSign, Briefcase, Bot } from 'lucide-react';
+import { Headset, ShoppingCart, DollarSign, Briefcase, Bot, Clock, Zap } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const servicesData: ServiceItem[] = [
@@ -27,6 +27,16 @@ const servicesData: ServiceItem[] = [
     title: "Analytics/IA",
     description: "Transformamos datos en insights automatizaciones y oportunidades de mejora. Este servicio incluye análisis de indicadores, diseño de tableros, detección de desvíos y aplicación de inteligencia artificial para optimizar  recursos y generar mayor eficiencia",
     icon: <Bot size={24} />
+  },
+  {
+    title: "WFM (Workforce Management)",
+    description: "Convertimos la planificación en una ventaja competitiva. Anticipamos la demanda, optimizamos la asignación de recursos y gestionamos la operación en tiempo real para garantizar eficiencia, cumplimiento y resultados sostenibles.",
+    icon: <Clock size={24} />
+  },
+  {
+    title: "Soluciones Digitales",
+    description: "Incorporamos tecnología y automatización para optimizar procesos, mejorar tiempos de respuesta y escalar la operación, asegurando una experiencia más ágil y eficiente.",
+    icon: <Zap size={24} />
   }
 ];
 

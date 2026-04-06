@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         </div>
         
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-8 tracking-tighter leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
-          Conectamos <br/><span className="text-secondary italic">Valor</span> Humano
+          <span className="text-secondary">Experiencias</span> <br/>que convierten
         </h1>
         
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-8 animate-in fade-in zoom-in-95 duration-1000">
