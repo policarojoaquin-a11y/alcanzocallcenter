@@ -3,18 +3,28 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
   {
-    url: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
+    url: "/Copia de DSC_0031.JPG",
     caption: "Equipo Alcanzo",
     year: "2024"
   },
   {
-    url: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80",
-    caption: "Capacitación",
-    year: "2023"
+    url: "/Copia de DSC_0042.JPG",
+    caption: "Equipo Alcanzo",
+    year: "2024"
   },
   {
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-    caption: "Oficinas",
+    url: "/Copia de DSC_0091.JPG",
+    caption: "Equipo Alcanzo",
+    year: "2024"
+  },
+  {
+    url: "/Copia de DSC_0100.JPG",
+    caption: "Equipo Alcanzo",
+    year: "2024"
+  },
+  {
+    url: "/Copia de DSC_0127.JPG",
+    caption: "Equipo Alcanzo",
     year: "2024"
   }
 ];

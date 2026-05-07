@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-black text-primary text-lg uppercase tracking-wider">Canal Directo</h4>
-                  <p className="text-slate-700 font-semibold">contacto@alcanzo.com</p>
+                  <p className="text-slate-700 font-semibold">alcanzocallcenter@gmail.com</p>
                 </div>
               </div>
             </div>
