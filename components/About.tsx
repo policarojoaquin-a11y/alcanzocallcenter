@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
   {
-    url: "/Copia de DSC_0031.JPG",
+    url: "/Copia de DSC_0127.JPG",
     caption: "Equipo Alcanzo",
     year: "2024"
   },
@@ -23,7 +23,7 @@ const galleryImages = [
     year: "2024"
   },
   {
-    url: "/Copia de DSC_0127.JPG",
+    url: "/Copia de DSC_0031.JPG",
     caption: "Equipo Alcanzo",
     year: "2024"
   }
