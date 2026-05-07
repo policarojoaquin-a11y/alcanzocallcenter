@@ -8,7 +8,7 @@ const galleryImages = [
     year: "2024"
   },
   {
-    url: "/Copia de DSC_0042.JPG",
+    url: "/Copia de DSC_0091.JPG",
     caption: "Equipo Alcanzo",
     year: "2024"
   },
