@@ -58,7 +58,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header Compacto */}
         <div className="mb-12 border-b border-slate-100 pb-6">
-          <span className="text-secondary font-black text-[10px] uppercase tracking-[0.4em] mb-2 block">Identidad Alcanzo</span>
+          <span className="text-secondary font-black text-[10px] uppercase tracking-[0.4em] mb-2 block">Identidad <span style={{ fontFamily: "'Montserrat', sans-serif", textTransform: 'none' }}>alcanzo</span></span>
           <h2 className="text-4xl font-black text-primary tracking-tighter uppercase">Quiénes Somos</h2>
         </div>
 

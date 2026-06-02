@@ -66,8 +66,8 @@ const Testimonials: React.FC = () => {
           {/* Columna izquierda — texto */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-primary mb-3">Comunidad Alcanzo</h2>
-              <p className="text-secondary font-black text-xl md:text-2xl mb-6 tracking-tight">Somos equipo. Somos Alcanzo.</p>
+              <h2 className="text-4xl md:text-5xl font-black text-primary mb-3">Comunidad <span style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span></h2>
+              <p className="text-secondary font-black text-xl md:text-2xl mb-6 tracking-tight">Somos equipo. Somos <span style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span>.</p>
             </div>
 
             <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
             </div>
 
             <p className="text-slate-600 text-base font-medium leading-relaxed">
-              En Alcanzo creemos que los buenos resultados también nacen de los buenos vínculos. Por eso celebramos nuestros logros, compartimos momentos en equipo y construimos una cultura donde cada persona forma parte de algo más grande.
+              En <span style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span> creemos que los buenos resultados también nacen de los buenos vínculos. Por eso celebramos nuestros logros, compartimos momentos en equipo y construimos una cultura donde cada persona forma parte de algo más grande.
             </p>
 
             <a

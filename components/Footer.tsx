@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="border-t border-white/10 mt-6 pt-6 flex flex-col md:flex-row justify-between items-center text-white/70 text-[9px] uppercase tracking-widest font-bold">
-          <p>&copy; {new Date().getFullYear()} Alcanzo S.A. Todos los derechos reservados. Hecho con Popsi</p>
+          <p>&copy; {new Date().getFullYear()} <span style={{ fontFamily: "'Montserrat', sans-serif", textTransform: 'none' }}>alcanzo</span> S.A. Todos los derechos reservados. Hecho con Popsi</p>
         </div>
       </div>
     </footer>
