@@ -93,7 +93,6 @@ const About: React.FC = () => {
                   <img src={img.url} alt={img.caption} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#CBBAAD]/80 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <p className="text-2xl font-black">{img.year}</p>
                     <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">{img.caption}</p>
                   </div>
                 </div>
