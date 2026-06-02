@@ -4,28 +4,27 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const galleryImages = [
   {
     url: "/Copia de DSC_0127.JPG",
-    caption: "Equipo Alcanzo",
-    year: "2024"
+    caption: "Equipo Alcanzo"
   },
   {
-    url: "/Copia de DSC_0042.JPG",
-    caption: "Equipo Alcanzo",
-    year: "2024"
+    url: "/Copia de DSC_0091.JPG",
+    caption: "Equipo Alcanzo"
   },
   {
-    url: "/Copia de DSC_0045.JPG",
-    caption: "Equipo Alcanzo",
-    year: "2024"
+    url: "/Sede centro1.jpg",
+    caption: "Equipo Alcanzo"
   },
   {
     url: "/Copia de DSC_0100.JPG",
-    caption: "Equipo Alcanzo",
-    year: "2024"
+    caption: "Equipo Alcanzo"
+  },
+  {
+    url: "/Sede centro 2.jpg",
+    caption: "Equipo Alcanzo"
   },
   {
     url: "/Copia de DSC_0031.JPG",
-    caption: "Equipo Alcanzo",
-    year: "2024"
+    caption: "Equipo Alcanzo"
   }
 ];
 

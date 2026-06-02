@@ -49,10 +49,10 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
                         />
                     </div>
                     <div className="flex items-baseline gap-1.5">
-                        <span className={`text-2xl font-black tracking-tighter transition-colors ${(scrolled || activeSection !== 'inicio') ? 'text-primary' : 'text-white'}`}>
-                            ALCANZO
+                        <span className={`text-2xl font-black tracking-tighter transition-colors`} style={{ fontFamily: "'Montserrat', sans-serif", color: (scrolled || activeSection !== 'inicio') ? '#CBBAAD' : 'white' }}>
+                            alcanzo
                         </span>
-                        <span className={`text-xs font-bold tracking-wider transition-colors opacity-70 ${(scrolled || activeSection !== 'inicio') ? 'text-secondary' : 'text-white'}`}>
+                        <span className={`text-xs font-bold tracking-wider transition-colors opacity-70 ${(scrolled || activeSection !== 'inicio') ? 'text-secondary' : 'text-white'}`} style={{ fontFamily: "'Montserrat', sans-serif" }}>
                             tus metas.
                         </span>
                     </div>
@@ -97,8 +97,8 @@ const Header: React.FC<HeaderProps> = ({ activeSection, onNavigate }) => {
                 <div className="fixed inset-0 w-full h-screen bg-white z-[60] lg:hidden flex flex-col p-8 gap-6 animate-in fade-in slide-in-from-top-10">
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex items-baseline gap-1">
-                            <span className="text-2xl font-black text-primary">ALCANZO</span>
-                            <span className="text-xs font-bold text-secondary">tus metas.</span>
+                            <span className="text-2xl font-black text-primary" style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span>
+                            <span className="text-xs font-bold text-secondary" style={{ fontFamily: "'Montserrat', sans-serif" }}>tus metas.</span>
                         </div>
                         <button onClick={() => setIsOpen(false)} className="text-slate-400"><X size={32} /></button>
                     </div>

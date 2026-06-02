@@ -1,85 +1,156 @@
-import React, { useState } from 'react';
-import { Star, ExternalLink, ImageOff } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Star, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const reviewImages = [
-  { id: 1, src: "test12.jpg", alt: "Reseña positiva de cliente" },
-  { id: 2, src: "test22.jpg", alt: "Testimonio de satisfacción" },
-  { id: 3, src: "test33.jpg", alt: "Comentario de cliente" },
-  { id: 4, src: "test44.jpg", alt: "Valoración de 5 estrellas" }
+const communitySlides: { src: string; type: 'image' | 'video'; title: string; subtitle: string }[] = [
+  {
+    src: "dia del trabajador.jpg",
+    type: "image",
+    title: "Celebramos lo que somos",
+    subtitle: "Festejo del Día del Trabajador"
+  },
+  {
+    src: "halloween.jpg",
+    type: "image",
+    title: "La cultura también se construye compartiendo",
+    subtitle: "Halloween"
+  },
+  {
+    src: "dia del amigo.jpg",
+    type: "image",
+    title: "Momentos que nos unen",
+    subtitle: "Día del Amigo"
+  },
+  {
+    src: "celebracion pascua.png",
+    type: "image",
+    title: "Orgulloso de ser parte",
+    subtitle: "Celebración Pascuas"
+  },
+  {
+    src: "busqueda tesoro.MP4",
+    type: "video" as const,
+    title: "Primavera en equipo",
+    subtitle: "Busqueda del tesoro"
+  }
+  // Para agregar un video, usá este formato:
+  // { src: "nombre-del-video.mp4", type: "video" as const, title: "...", subtitle: "..." }
 ];
 
-const TestimonialImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
-  const [currentSrc, setCurrentSrc] = useState(`/${src}`);
-  const [hasError, setHasError] = useState(false);
+const Testimonials: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const handleError = () => {
-    if (currentSrc === `/${src}`) {
-      setCurrentSrc(`/public/${src}`);
-    } else {
-      setHasError(true);
-    }
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(() => {
+      setCurrent((prev: number) => (prev + 1) % communitySlides.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
+
+  const prev = () => {
+    setIsAutoPlaying(false);
+    setCurrent((p: number) => (p - 1 + communitySlides.length) % communitySlides.length);
   };
 
-  if (hasError) {
-    return (
-      <div className="w-full h-48 bg-slate-100 rounded-2xl flex flex-col items-center justify-center text-slate-400 border-2 border-dashed border-slate-200">
-        <ImageOff size={32} />
-        <span className="text-xs mt-3 italic font-bold">Reseña Certificada</span>
-      </div>
-    );
-  }
+  const next = () => {
+    setIsAutoPlaying(false);
+    setCurrent((p: number) => (p + 1) % communitySlides.length);
+  };
 
   return (
-    <img 
-      src={currentSrc} 
-      alt={alt} 
-      className="w-full h-auto rounded-xl shadow-md group-hover:scale-[1.05] transition-transform duration-500"
-      onError={handleError}
-      loading="lazy"
-    />
-  );
-};
+    <section id="comunidad" className="py-24 bg-cream/50">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-const Testimonials: React.FC = () => {
-  return (
-    <section id="comunidad" className="py-24 bg-cream/50 min-h-[80vh] flex items-center">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-primary mb-4">Comunidad Alcanzo</h2>
-          <div className="flex justify-center items-center gap-4 mb-6">
-             <span className="text-secondary font-black text-3xl">4.9</span>
-             <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
-                ))}
-             </div>
-             <span className="text-slate-400 font-bold text-sm tracking-widest">(GOOGLE REVIEWS)</span>
-          </div>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg font-medium">
-            Nuestra cultura se basa en la transparencia. Conocé las experiencias reales de quienes forman parte de nuestro equipo y red de clientes.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
-          {reviewImages.map((img) => (
-            <div 
-              key={img.id} 
-              className="group w-full sm:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)] bg-white p-4 rounded-3xl shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all border border-white"
-            >
-              <TestimonialImage src={img.src} alt={img.alt} />
+          {/* Columna izquierda — texto */}
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-primary mb-3">Comunidad Alcanzo</h2>
+              <p className="text-secondary font-black text-xl md:text-2xl mb-6 tracking-tight">Somos equipo. Somos Alcanzo.</p>
             </div>
-          ))}
-        </div>
 
-        <div className="text-center mt-16">
-          <a 
-            href="https://www.google.com/search?q=alcanzo+call+center&sca_esv=4dde0993aef9cf17&rlz=1C1UEAD_enAR1148AR1148&sxsrf=ANbL-n5QesnpnrXQq5eCgn1buhQ95D0NMg%3A1770058222937&ei=7vGAaYrvOKOq5OUPj4C76QE&biw=1536&bih=695&aic=0&ved=0ahUKEwiKnvDcvLuSAxUjFbkGHQ_ALh0Q4dUDCBE&uact=5&oq=alcanzo+call+center&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2FsY2Fuem8gY2FsbCBjZW50ZXIyBRAAGIAEMgUQABiABDIGEAAYFhgeMgYQABgWGB4yBRAAGO8FSOAcUKQSWP8bcAR4AZABAJgBuwGgAbgLqgEEMS4xMLgBA8gBAPgBAZgCD6ACgwzCAgoQABiwAxjWBBhHwgIKEAAYgAQYFBiHAsICCBAAGIAEGKIEmAMAiAYBkAYIkgcENS4xMKAH9iqyBwQxLjEwuAfsC8IHBTAuNi45yAc1gAgA&sclient=gws-wiz-serp#lrd=0x95bccacc67d417bd:0x9dccca39fb66f1cd,1,,,," 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-full font-black hover:bg-accent transition-all shadow-xl shadow-primary/20 text-sm uppercase tracking-widest group"
-          >
-            Ver todas las reseñas <ExternalLink size={18} className="group-hover:rotate-12 transition-transform" />
-          </a>
+            <div className="flex items-center gap-4">
+              <span className="text-secondary font-black text-3xl">4.9</span>
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={22} className="text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <span className="text-slate-400 font-bold text-xs tracking-widest">(GOOGLE REVIEWS)</span>
+            </div>
+
+            <p className="text-slate-600 text-base font-medium leading-relaxed">
+              En Alcanzo creemos que los buenos resultados también nacen de los buenos vínculos. Por eso celebramos nuestros logros, compartimos momentos en equipo y construimos una cultura donde cada persona forma parte de algo más grande.
+            </p>
+
+            <a
+              href="https://www.google.com/search?q=alcanzo+call+center#lrd=0x95bccacc67d417bd:0x9dccca39fb66f1cd,1,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-primary text-white px-7 py-3 rounded-full font-black hover:bg-accent transition-all shadow-lg shadow-primary/20 text-sm uppercase tracking-widest group"
+            >
+              Ver todas las reseñas <ExternalLink size={16} className="group-hover:rotate-12 transition-transform" />
+            </a>
+          </div>
+
+          {/* Columna derecha — carrusel */}
+          <div className="relative group rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-100" style={{ aspectRatio: '4/3' }}>
+            {communitySlides.map((slide, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  index === current ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {slide.type === 'video' ? (
+                  <video
+                    src={slide.src}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={slide.src}
+                    alt={slide.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-6 right-6 text-white">
+                  <p className="text-lg md:text-xl font-black leading-tight mb-0.5">{slide.title}</p>
+                  <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest opacity-70">{slide.subtitle}</p>
+                </div>
+              </div>
+            ))}
+
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all opacity-0 group-hover:opacity-100 z-10"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all opacity-0 group-hover:opacity-100 z-10"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+              {communitySlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setIsAutoPlaying(false); setCurrent(i); }}
+                  className={`h-1.5 rounded-full transition-all ${i === current ? 'w-5 bg-secondary' : 'w-2 bg-white/50'}`}
+                />
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
