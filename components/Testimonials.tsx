@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Star, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const communitySlides: { src: string; type: 'image' | 'video'; title: string; subtitle: string }[] = [
   {
@@ -70,28 +70,10 @@ const Testimonials: React.FC = () => {
               <p className="text-secondary font-black text-xl md:text-2xl mb-6 tracking-tight">Somos equipo. Somos <span style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span>.</p>
             </div>
 
-            <div className="flex items-center gap-4">
-              <span className="text-secondary font-black text-3xl">4.9</span>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={22} className="text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              <span className="text-slate-400 font-bold text-xs tracking-widest">(GOOGLE REVIEWS)</span>
-            </div>
-
             <p className="text-slate-600 text-base font-medium leading-relaxed">
               En <span style={{ fontFamily: "'Montserrat', sans-serif" }}>alcanzo</span> creemos que los buenos resultados también nacen de los buenos vínculos. Por eso celebramos nuestros logros, compartimos momentos en equipo y construimos una cultura donde cada persona forma parte de algo más grande.
             </p>
 
-            <a
-              href="https://www.google.com/search?q=alcanzo+call+center#lrd=0x95bccacc67d417bd:0x9dccca39fb66f1cd,1,,,,"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary text-white px-7 py-3 rounded-full font-black hover:bg-accent transition-all shadow-lg shadow-primary/20 text-sm uppercase tracking-widest group"
-            >
-              Ver todas las reseñas <ExternalLink size={16} className="group-hover:rotate-12 transition-transform" />
-            </a>
           </div>
 
           {/* Columna derecha — carrusel */}
